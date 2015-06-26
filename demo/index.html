@@ -7,21 +7,76 @@
 		div {
 			margin:5px;
 		}
+		.left {
+			float:left;
+		}
+		.clear {
+			clear:both;
+		}
+		.image-bg {
+			background-image:linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+			display:inline-block;
+			border-radius:100px;
+		}
 	</style>
 </head>
 <body>
-	<div id="test1"></div>
-	<div id="test2"></div>
-	<div id="test3"></div>
+	<h1>jQuery Circles Progressbar</h1>
+	<h2>Basic</h2>
+	<div class="left" id="test1"></div>
+	<div class="left" id="test1a"></div>
+	<div class="left" id="test1b"></div>
+	<div class="left" id="test1c"></div>
+	<div class="clear"></div>
+
+	<h2>With Border</h2>
+	<div class="left" id="test2"></div>
+	<div class="left" id="test2a"></div>
+	<div class="left" id="test2b"></div>
+	<div class="left" id="test2c"></div>
+	<div class="left" id="test2d"></div>
+	<div class="left" id="test2e"></div>
+	<div class="clear"></div>
+
+	<h2>Transparency</h2>
+	<div class="image-bg">
+		<div class="left" id="test3"></div>
+		<div class="left" id="test3a"></div>
+		<div class="left" id="test3b"></div>
+		<div class="left" id="test3c"></div>
+		<div class="left" id="test3d"></div>
+		<div class="clear"></div>
+	</div>
+
 	<script type="text/javascript" src="../build/bundle.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function () {
-			jQuery('#test1').circlesProgress({'progress':'10','borderSize':'2'});
-			var c2 = jQuery('#test2').circlesProgress({'size':'100','progress':'66','initialProgress':'100'});
-			jQuery('#test3').circlesProgress({'size':'200','progress':'100','innerOpacity':0.5});
-			var delay = setTimeout(function () {
-				c2.update({'progress':'10','innerColor':'rgb(255,0,0)'});
+
+			jQuery('#test1').circlesProgress({'size':'100','progress':'10','borderSize':'0','innerColor':'rgb(255,0,0)','initialProgress':'80'});
+			jQuery('#test1a').circlesProgress({'size':'100','progress':'20','borderSize':'0','innerColor':'rgb(255,100,0)'});
+			jQuery('#test1b').circlesProgress({'size':'100','progress':'40','borderSize':'0','innerColor':'rgb(255,0,200)'});
+			jQuery('#test1c').circlesProgress({'size':'100','progress':'80','borderSize':'0','innerColor':'rgb(0,100,255)'});
+
+			var c2 = jQuery('#test2').circlesProgress({'size':'100','borderSize':'1','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,0)'});
+			var c2a = jQuery('#test2a').circlesProgress({'size':'100','borderSize':'2','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,0)'});
+			var c2b = jQuery('#test2b').circlesProgress({'size':'100','borderSize':'5','progress':'66','initialProgress':'100','innerColor':'rgb(0,0,255)'});
+			var c2c = jQuery('#test2c').circlesProgress({'size':'100','borderSize':'10','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,255)'});
+			var c2d = jQuery('#test2d').circlesProgress({'size':'100','borderSize':'20','progress':'66','initialProgress':'100','innerColor':'rgb(255,255,0)'});
+			var c2e = jQuery('#test2e').circlesProgress({'size':'100','borderSize':'40','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,255)'});
+			var delay = setInterval(function () {
+				c2.update({'progress':Math.random()*100});
+				c2a.update({'progress':Math.random()*100});
+				c2b.update({'progress':Math.random()*100});
+				c2c.update({'progress':Math.random()*100});
+				c2d.update({'progress':Math.random()*100});
+				c2e.update({'progress':Math.random()*100,'borderSize':Math.random()*40});
 			},3000);
+
+			jQuery('#test3').circlesProgress({'size':'200','progress':'50','innerOpacity':1,'outerOpacity':0.2});
+			jQuery('#test3a').circlesProgress({'size':'200','progress':'75','innerOpacity':0.2,'outerOpacity':0.2});
+			jQuery('#test3b').circlesProgress({'size':'200','progress':'25','innerOpacity':0,'outerOpacity':0.5});
+			jQuery('#test3c').circlesProgress({'size':'200','progress':'5','innerOpacity':1,'outerOpacity':0});
+			jQuery('#test3d').circlesProgress({'size':'200','progress':'66','innerOpacity':0.1,'outerOpacity':0.1});
 		});
 	</script>
 </body>
