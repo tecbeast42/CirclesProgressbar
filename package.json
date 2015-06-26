@@ -23,6 +23,7 @@
   "homepage": "https://github.com/tecbeast42/CirclesProgressbar#readme",
   "dependencies": {
     "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
     "laravel-elixir": "^2.3.12"
   }
 }
