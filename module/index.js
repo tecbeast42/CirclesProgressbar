@@ -18,6 +18,8 @@ global.jQuery = require('jquery');
 				svgElement: $('<svg><path class="cpb-border"></path><path class="cpb-loader"></path></svg>'),
 				innerColor:'#000',
 				outerColor:'#F00',
+				innerOpacity:1,
+				outerOpacity:1,
 				borderSize:10,
 				debug:true,
 				alpha:0,
@@ -55,8 +57,14 @@ global.jQuery = require('jquery');
 				'transform':'translate('+plugin.settings.size/2+', '+plugin.settings.size/2+') scale('+(1-((plugin.settings.borderSize*2)/plugin.settings.size))+')'
 			});
 
-			plugin.settings.loader.css('fill',plugin.settings.innerColor);
-			plugin.settings.border.css('fill',plugin.settings.outerColor);
+			plugin.settings.loader.css({
+				'fill':plugin.settings.innerColor,
+				'fill-opacity': plugin.settings.innerOpacity
+			});
+			plugin.settings.border.css({
+				'fill':plugin.settings.outerColor,
+				'fill-opacity':plugin.settings.outerOpacity
+			});
 		};
 
 		plugin.animate = function () {

@@ -18,7 +18,7 @@
 		jQuery(document).ready(function () {
 			jQuery('#test1').circlesProgress({'progress':'10','borderSize':'2'});
 			var c2 = jQuery('#test2').circlesProgress({'size':'100','progress':'66','initialProgress':'100'});
-			jQuery('#test3').circlesProgress({'size':'200','progress':'100'});
+			jQuery('#test3').circlesProgress({'size':'200','progress':'100','innerOpacity':0.5});
 			var delay = setTimeout(function () {
 				c2.update({'progress':'10','innerColor':'rgb(255,0,0)'});
 			},3000);
