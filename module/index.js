@@ -1,7 +1,7 @@
 global.jQuery = require('jquery');
 
 (function ( $ ) {
-	$.fn.circlesProgress = function ( options ) {
+	module.exports = $.fn.circlesProgress = function ( options ) {
 		var plugin = this;
 		plugin.settings = {};
 
