@@ -10,6 +10,15 @@ A jQuery Plugin for several Circle Shaped Progressbars
 
 	$(element).circlesProgress(optionsObject);
 
+e.g.
+optionsObject = {
+	'size':150, // 150px width and height
+	'progress': 50, // fillup in percent
+	'innerColor': 'rgb(255,0,0)',
+	'outerColor': '#00F',
+	'borderSize': 4, // width of the border
+}
+
 ### Avaible Options
 	- size 
 	- progress
