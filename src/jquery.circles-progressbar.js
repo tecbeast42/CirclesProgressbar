@@ -1,7 +1,5 @@
-global.jQuery = require('jquery');
-
 (function ( $ ) {
-	module.exports = $.fn.circlesProgress = function ( options ) {
+	$.fn.circlesProgress = function ( options ) {
 		var plugin = this;
 		plugin.settings = {};
 
@@ -109,4 +107,4 @@ global.jQuery = require('jquery');
 		// console.log(plugin);
 		return plugin;
 	};
-} (jQuery));
+})(jQuery);

@@ -2,7 +2,7 @@
   "name": "jquery-circles-progressbar",
   "version": "0.1.0",
   "description": "A jQuery Plugin for several Circle Shaped Progressbars",
-  "main": "module/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo 'Error: no test specified' && exit 1"
   },
@@ -13,7 +13,9 @@
   "keywords": [
     "jQuery",
     "circular",
-    "progressbar"
+    "progressbar",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "author": "Tobias Kriebisch <github@tecbeast.de> (http://tecbeast.de)",
   "license": "MIT",
