@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Circles</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
 	<style type="text/css">
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
 		div {
 			margin:5px;
 		}
@@ -18,11 +22,54 @@
 			display:inline-block;
 			border-radius:100px;
 		}
+		.cpb-text {
+			color:gray;
+			font-size:25px;
+		}
+		.cpb-text-2 {
+			color:red;
+			font-size:20px;
+			top:-35px !important;
+		}
+		.cpb-text-3 {
+			font-size:80px;
+			color:red;
+		}
 	</style>
 </head>
 <body>
 	<h1>jQuery Circles Progressbar</h1>
 	<h2>Basic</h2>
+	<div class="left" id="basic0"></div>
+	<div class="left" id="basic1"></div>
+	<div class="left" id="basic2"></div>
+	<div class="left" id="basic3"></div>
+	<div class="left" id="basic4"></div>
+	<div class="left" id="basic5"></div>
+	<div class="left" id="basic6"></div>
+	<div class="left" id="basic7"></div>
+	<div class="left" id="basic8"></div>
+	<div class="left" id="basic9"></div>
+	<div class="left" id="basic10"></div>
+	<div class="clear"></div>
+
+	<h3>With Text (custom CSS Class possible)</h3>
+	<div class="left" id="basic0t"></div>
+	<div class="left" id="basic1t"></div>
+	<div class="left" id="basic2t"></div>
+	<div class="left" id="basic3t"></div>
+	<div class="left" id="basic4t"></div>
+	<div class="left" id="basic5t"></div>
+	<div class="left" id="basic6t"></div>
+	<div class="left" id="basic7t"></div>
+	<div class="left" id="basic8t"></div>
+	<div class="clear"></div>
+	<h3>With % Sign and custom CSS</h3>
+	<div class="left" id="basic9t"></div>
+	<div class="left" id="basic10t"></div>
+	<div class="clear"></div>
+
+	<h3>Colors</h3>
 	<div class="left" id="test1"></div>
 	<div class="left" id="test1a"></div>
 	<div class="left" id="test1b"></div>
@@ -47,36 +94,87 @@
 		<div class="left" id="test3d"></div>
 		<div class="clear"></div>
 	</div>
+
+	<h2>No Animation</h2>
+	<div class="left" id="test4"></div>
+	<div class="left" id="test4a"></div>
+	<div class="left" id="test4b"></div>
+	<div class="left" id="test4c"></div>
+	<div class="left" id="test4d"></div>
+	<div class="clear"></div>
+
 	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="../dist/jquery.circles-progressbar.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
+			//Basic
+			$('#basic0').circlesProgress({'progress':'1','borderSize':'0'});
+			$('#basic1').circlesProgress({'progress':'10','borderSize':'0'});
+			$('#basic2').circlesProgress({'progress':'20','borderSize':'0'});
+			$('#basic3').circlesProgress({'progress':'30','borderSize':'0'});
+			$('#basic4').circlesProgress({'progress':'40','borderSize':'0'});
+			$('#basic5').circlesProgress({'progress':'50','borderSize':'0'});
+			$('#basic6').circlesProgress({'progress':'60','borderSize':'0'});
+			$('#basic7').circlesProgress({'progress':'70','borderSize':'0'});
+			$('#basic8').circlesProgress({'progress':'80','borderSize':'0'});
+			$('#basic9').circlesProgress({'progress':'90','borderSize':'0'});
+			$('#basic10').circlesProgress({'progress':'100','borderSize':'0'});
+
+			//Basic with text
+			$('#basic0t').circlesProgress({'progress':'0','borderSize':'0','enableTextIndicator':true});
+			$('#basic1t').circlesProgress({'progress':'10','borderSize':'0','enableTextIndicator':true});
+			$('#basic2t').circlesProgress({'progress':'20','borderSize':'0','enableTextIndicator':true});
+			$('#basic3t').circlesProgress({'progress':'30','borderSize':'0','enableTextIndicator':true});
+			$('#basic4t').circlesProgress({'progress':'40','borderSize':'0','enableTextIndicator':true});
+			$('#basic5t').circlesProgress({'progress':'50','borderSize':'0','enableTextIndicator':true});
+			$('#basic6t').circlesProgress({'progress':'60','borderSize':'0','enableTextIndicator':true});
+			$('#basic7t').circlesProgress({'progress':'70','borderSize':'0','enableTextIndicator':true});
+			$('#basic8t').circlesProgress({'progress':'80','borderSize':'0','enableTextIndicator':true});
+
+			//Basic with percent
+			$('#basic9t').circlesProgress({'progress':'90','borderSize':'0','enableTextIndicator':true,'textElementClass':'cpb-text-2',diplayPercentSign:true});
+			$('#basic10t').circlesProgress({'progress':'100','borderSize':'0','enableTextIndicator':true,'textElementClass':'cpb-text-2',diplayPercentSign:true});
 
 			$('#test1').circlesProgress({'size':'100','progress':'10','borderSize':'0','innerColor':'rgb(255,0,0)','initialProgress':'80'});
 			$('#test1a').circlesProgress({'size':'100','progress':'20','borderSize':'0','innerColor':'rgb(255,100,0)'});
 			$('#test1b').circlesProgress({'size':'100','progress':'40','borderSize':'0','innerColor':'rgb(255,0,200)'});
 			$('#test1c').circlesProgress({'size':'100','progress':'80','borderSize':'0','innerColor':'rgb(0,100,255)'});
 
-			var c2 = $('#test2').circlesProgress({'size':'100','borderSize':'1','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,0)'});
-			var c2a = $('#test2a').circlesProgress({'size':'100','borderSize':'2','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,0)'});
-			var c2b = $('#test2b').circlesProgress({'size':'100','borderSize':'5','progress':'66','initialProgress':'100','innerColor':'rgb(0,0,255)'});
-			var c2c = $('#test2c').circlesProgress({'size':'100','borderSize':'10','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,255)'});
-			var c2d = $('#test2d').circlesProgress({'size':'100','borderSize':'20','progress':'66','initialProgress':'100','innerColor':'rgb(255,255,0)'});
-			var c2e = $('#test2e').circlesProgress({'size':'100','borderSize':'40','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,255)'});
-			var delay = setInterval(function () {
-				c2.update({'progress':Math.random()*100});
-				c2a.update({'progress':Math.random()*100});
-				c2b.update({'progress':Math.random()*100});
-				c2c.update({'progress':Math.random()*100});
-				c2d.update({'progress':Math.random()*100});
-				c2e.update({'progress':Math.random()*100,'borderSize':Math.random()*40});
-			},3000);
+			var c2 = $('#test2').circlesProgress({'size':'100','borderSize':'1','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,0)','outerColor':'black'});
+			var c2a = $('#test2a').circlesProgress({'size':'100','borderSize':'2','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,0)','outerColor':'black'});
+			var c2b = $('#test2b').circlesProgress({'size':'100','borderSize':'5','progress':'66','initialProgress':'100','innerColor':'rgb(0,0,255)','outerColor':'black'});
+
+			var c2c = $('#test2c').circlesProgress({'size':'100','borderSize':'10','progress':'66','initialProgress':'100','innerColor':'rgb(255,0,255)','outerColor':'rgb(255,0,0)'});
+			var c2d = $('#test2d').circlesProgress({'size':'100','borderSize':'20','progress':'66','initialProgress':'100','innerColor':'rgb(255,255,0)','outerColor':'rgb(0,255,0)'});
+			var c2e = $('#test2e').circlesProgress({'size':'100','borderSize':'40','progress':'66','initialProgress':'100','innerColor':'rgb(0,255,255)','outerColor':'rgb(0,0,255)'});
 
 			$('#test3').circlesProgress({'size':'200','progress':'50','innerOpacity':1,'outerOpacity':0.2});
 			$('#test3a').circlesProgress({'size':'200','progress':'75','innerOpacity':0.2,'outerOpacity':0.2});
 			$('#test3b').circlesProgress({'size':'200','progress':'25','innerOpacity':0,'outerOpacity':0.5});
 			$('#test3c').circlesProgress({'size':'200','progress':'5','innerOpacity':1,'outerOpacity':0});
 			$('#test3d').circlesProgress({'size':'200','progress':'66','innerOpacity':0.1,'outerOpacity':0.1});
+
+			var c4 = $('#test4').circlesProgress({'textElementClass':'cpb-text-3','animate':false,'progress':66,'size':300});
+			var c4a = $('#test4a').circlesProgress({'textElementClass':'cpb-text-3','animate':false,'progress':66,'size':300});
+			var c4b = $('#test4b').circlesProgress({'textElementClass':'cpb-text-3','animate':false,'progress':66,'size':300,'enableTextIndicator':true});
+			var c4c = $('#test4c').circlesProgress({'textElementClass':'cpb-text-3','animate':false,'progress':66,'size':300,'enableTextIndicator':true});
+			var c4d = $('#test4d').circlesProgress({'textElementClass':'cpb-text-3','animate':false,'progress':66,'size':300,'enableTextIndicator':true,diplayPercentSign:true});
+
+			var delay = setInterval(function () {
+				c2.update({'progress':Math.random()*100});
+				c2a.update({'progress':Math.random()*100});
+				c2b.update({'progress':Math.random()*100});
+
+				c2c.update({'progress':Math.random()*100});
+				c2d.update({'progress':Math.random()*100});
+				c2e.update({'progress':Math.random()*100,'borderSize':Math.random()*40});
+
+				c4.update({'progress':Math.random()*100});
+				c4a.update({'progress':Math.random()*100});
+				c4b.update({'progress':Math.random()*100});
+				c4c.update({'progress':Math.random()*100});
+				c4d.update({'progress':Math.random()*100});
+			},3000);
 		});
 	</script>
 </body>
