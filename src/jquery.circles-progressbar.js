@@ -1,7 +1,5 @@
-var exports = module.exports = {};
-
 (function ( $ ) {
-	exports = $.fn.circlesProgress = function ( options ) {
+	$.fn.circlesProgress = function ( options ) {
 		var plugin = this;
 		plugin.settings = {};
 
@@ -12,7 +10,6 @@ var exports = module.exports = {};
 		var degreeToPercent = function (degree) {
 			return Math.round(degree/3.6);
 		};
-
 
 		plugin.init = function () {
 			plugin.settings = $.extend({
