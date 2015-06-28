@@ -1,5 +1,7 @@
+var exports = module.exports = {};
+
 (function ( $ ) {
-	$.fn.circlesProgress = function ( options ) {
+	exports = $.fn.circlesProgress = function ( options ) {
 		var plugin = this;
 		plugin.settings = {};
 
