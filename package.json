@@ -1,6 +1,6 @@
 {
   "name": "jquery-circles-progressbar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A jQuery Plugin for several Circle Shaped Progressbars",
   "main": "index.js",
   "scripts": {
