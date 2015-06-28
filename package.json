@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'Error: no test specified' && exit 1",
-    "build": "npm install && gulp"
+    "build": "npm install && gulp",
+    "prepublish": "npm install && gulp"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,10 @@
   },
   "homepage": "https://github.com/tecbeast42/CirclesProgressbar#readme",
   "dependencies": {
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
     "gulp": "^3.9.0",
-    "jquery": "^2.1.4",
     "laravel-elixir": "^2.3.12"
   }
 }
